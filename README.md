@@ -28,7 +28,6 @@ or:
 Try this example on a Jupyter notebook.
 
 ```python
-import jupyter_ee_map
 from jupyter_ee_map import EEMap
 import ee
 ee.Initialize()
