@@ -3,7 +3,7 @@ import ipyleaflet
 
 
 class EEMap(ipyleaflet.Map):
-    """Short summary.
+    """Widget to display Google Earth Engine Images.
 
     Parameters
     ----------
@@ -64,5 +64,5 @@ class EEMap(ipyleaflet.Map):
     @staticmethod
     def _get_tileLayer_url(ee_image_object):
         map_id = ee.Image(ee_image_object).getMapId()
-        tile_url = "https://earthengine.googleapis.com/map/{mapid}/{{z}}/{{x}}/{{y}}?token={token}"
-        return tile_url.format(**map_id)
+        fetcher = map_id['tile_fetcher']
+        return fetcher.url_format
